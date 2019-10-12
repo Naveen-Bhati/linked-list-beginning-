@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+struct node{
+    int data;
+    node* next;
+};
+
+struct node* head=NULL;
+
+void insert(int x){
+    node* temp = new node();
+    temp->data = x;
+    temp->next = head;
+    head = temp;
+}
+
+void showlist(){
+    node* h = head;
+    cout<<"list is: "<<endl;
+    while(h!=NULL){
+        cout<<h->data<<" ";
+        h=h->next;
+    }
+    cout<<endl;
+}
+
+int main(){
+    int i,n,x;
+    cout<<"enter no of elements"<<endl;
+    cin>>n;
+    for(i=0;i<n;i++){
+        cout<<"enter your elements"<<endl;
+        cin>>x;
+        insert(x);
+        showlist();
+    }
+    
+    
+}
